@@ -1,4 +1,4 @@
-# gitで無視するファイル/フォルダ
+﻿# gitで無視するファイル/フォルダ
 *.ncb
 *.sdf
 *.suo
@@ -10,3 +10,4 @@ SetDefaultAudioDevice_original.exe
 Debug/
 Release/
 ipch/
+/#Release

@@ -12,6 +12,9 @@
 #include <devicetopology.h>
 #include <functiondiscoverykeys_devpkey.h>
 
+interface DECLSPEC_UUID("CA286FC3-91FD-42C3-8E9B-CAAFA66242E3")
+IPolicyConfig10;
+
 interface DECLSPEC_UUID("f8679f50-850a-41cf-9c72-430f290290c8")
 IPolicyConfig;
 class DECLSPEC_UUID("870af99c-171d-4f9e-af0d-e63df40c2bc9")
