@@ -4,4 +4,8 @@
     <LocalDebuggerCommandArguments>-t"スピーカー (Realtek AC'97 Audio)" -t"スピーカー (C-Media USB Audio       )"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>-t"スピーカー (Realtek AC'97 Audio)" -t"スピーカー (C-Media USB Audio       )"</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

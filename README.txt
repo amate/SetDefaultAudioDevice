@@ -30,6 +30,9 @@ License : Microsoft Public License (Ms-PL)
  
 ■更新履歴
 
+ver 1.3  windows10 InsiderPreview で動作しなかったのを修正
+         Ctrlを押しながら起動でデバイス名がクリップボードにコピーされないバグを修正
+
 ver 1.2  windows10で動作しなかったのを修正
 
 ver 1.1  トグル動作を追加

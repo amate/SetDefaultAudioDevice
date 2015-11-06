@@ -60,7 +60,16 @@ HRESULT RegisterDevice(LPCWSTR devID, ERole role)
 
 	HRESULT hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfig), (LPVOID *)&pPolicyConfig);
 	if (pPolicyConfig == nullptr) {
-		hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfig10), (LPVOID *)&pPolicyConfig);		
+		hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfig10_1), (LPVOID *)&pPolicyConfig);
+	}
+	if (pPolicyConfig == nullptr) {
+		hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfig10), (LPVOID *)&pPolicyConfig);
+	}
+	if (pPolicyConfig == nullptr) {
+		hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfig7), (LPVOID *)&pPolicyConfig);
+	}
+	if (pPolicyConfig == nullptr) {
+		hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfigVista), (LPVOID *)&pPolicyConfig);
 	}
 
 	if (pPolicyConfig != NULL) {
@@ -162,7 +171,7 @@ void Run()
 	}
 
 	// Ctrl を押しながら起動で　デバイス名をクリップボードへコピーする
-	if (::GetKeyState(VK_MENU) < 0) {
+	if (::GetKeyState(VK_CONTROL) < 0) {
 		CString cliptext;
 		for (auto it = vecEndPoint.cbegin(); it != vecEndPoint.cend(); ++it)
 			cliptext.AppendFormat(_T("%s\r\n"), it->name);
@@ -232,7 +241,11 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 {
 	CoInitialize(NULL);
 
+	OleInitialize(NULL);
+
 	Run();
+
+	OleUninitialize();
 
 	CoUninitialize();
 
