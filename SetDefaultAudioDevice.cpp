@@ -170,8 +170,8 @@ void Run()
 		}
 	}
 
-	// Ctrl を押しながら起動で　デバイス名をクリップボードへコピーする
-	if (::GetKeyState(VK_CONTROL) < 0) {
+	// Shift を押しながら起動で　デバイス名をクリップボードへコピーする
+	if (::GetKeyState(VK_SHIFT) < 0) {
 		CString cliptext;
 		for (auto it = vecEndPoint.cbegin(); it != vecEndPoint.cend(); ++it)
 			cliptext.AppendFormat(_T("%s\r\n"), it->name);

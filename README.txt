@@ -11,7 +11,7 @@
 SetDefaultAudioDevice.exe -t"トグル動作させたいデバイス名1" -t"トグル動作させたいデバイス名2"
 例: SetDefaultAudioDevice.exe -t"スピーカー (Realtek AC'97 Audio)" -t"スピーカー (C-Media USB Audio       )"
 
-デバイス名はSetDefaultAudioDeviceをCtrlを押しながら起動することによって、全デバイス名がクリップボードにコピーされるので参考にしてください
+デバイス名はSetDefaultAudioDeviceをShiftを押しながら起動することによって、全デバイス名がクリップボードにコピーされるので参考にしてください
 
 コマンドライン引数で指定するデバイス名は部分一致で検索するので、デバイス名の一部を指定するだけでもかまいません
 上の例だと
@@ -31,7 +31,7 @@ License : Microsoft Public License (Ms-PL)
 ■更新履歴
 
 ver 1.3  windows10 InsiderPreview で動作しなかったのを修正
-         Ctrlを押しながら起動でデバイス名がクリップボードにコピーされないバグを修正
+         Shiftを押しながら起動でデバイス名をクリップボードへコピーするように変更
 
 ver 1.2  windows10で動作しなかったのを修正
 
