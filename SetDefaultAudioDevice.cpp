@@ -60,9 +60,6 @@ HRESULT RegisterDevice(LPCWSTR devID, ERole role)
 
 	HRESULT hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfig), (LPVOID *)&pPolicyConfig);
 	if (pPolicyConfig == nullptr) {
-		hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfig10_1), (LPVOID *)&pPolicyConfig);
-	}
-	if (pPolicyConfig == nullptr) {
 		hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfig10), (LPVOID *)&pPolicyConfig);
 	}
 	if (pPolicyConfig == nullptr) {
@@ -70,6 +67,9 @@ HRESULT RegisterDevice(LPCWSTR devID, ERole role)
 	}
 	if (pPolicyConfig == nullptr) {
 		hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfigVista), (LPVOID *)&pPolicyConfig);
+	}
+	if (pPolicyConfig == nullptr) {
+		hr = CoCreateInstance(__uuidof(CPolicyConfigClient), NULL, CLSCTX_ALL, __uuidof(IPolicyConfig10_1), (LPVOID *)&pPolicyConfig);
 	}
 
 	if (pPolicyConfig != NULL) {
